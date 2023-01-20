@@ -65,7 +65,7 @@ class ContactDetailsTableViewCell: UITableViewCell {
                 self.contactMethodButton.isHidden = true
             } else {
                 self.innerView.isHidden = true
-                let contactWay = chatEnabled ? "Chat" : "Call"
+                let contactWay = chatEnabled ? StringConstants.chatString : StringConstants.callString
                 let contactButtonColor: UIColor = chatEnabled ? .systemBlue : .systemGreen
                 self.contactMethodButton.setTitle(contactWay, for: .normal)
                 self.contactMethodButton.backgroundColor = contactButtonColor
@@ -91,8 +91,8 @@ class ContactDetailsTableViewCell: UITableViewCell {
     }
     
     private func checkClinicTimings() -> String {
-        let saturday = "saturday"
-        let sunday = "sunday"
+        let saturday = StringConstants.saturday
+        let sunday = StringConstants.sunday
         
         let currentDate = Date()
         let dateFormatter = DateFormatter()
@@ -101,7 +101,7 @@ class ContactDetailsTableViewCell: UITableViewCell {
         
         if day == saturday || day == sunday {
             //NOTE: it seems to be a weekEnd. Out of office hours.
-            return "Work hours has ended. Please contact us again on the next work day"
+            return StringConstants.workHourEndMessage
             
         } else {
             //NOTE: it seems to be a weekday. check time.
@@ -117,9 +117,9 @@ class ContactDetailsTableViewCell: UITableViewCell {
             let closeHours = currentDate.dateAt(hours: 18, minutes: 00)
             
             if currentDate >= openHours && currentDate <= closeHours {
-                return "Thank you for getting in touch with us. We’ll get back to you as soon as possible"
+                return StringConstants.thankYouMessage
             } else {
-                return "Work hours has ended. Please contact us again on the next work day"
+                return StringConstants.workHourEndMessage
             }
         }
     }

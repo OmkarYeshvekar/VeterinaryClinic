@@ -81,7 +81,7 @@ extension HomeViewController: UITableViewDataSource {
 
         if let data = model[TableDataCellConstants.configScreenModel] as? ConfigScreenModel {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell",
+            let cell = tableView.dequeueReusableCell(withIdentifier: StringConstants.contactDetailsTableViewCell,
                                                      for: indexPath) as! ContactDetailsTableViewCell
             cell.selectionStyle = .none
             cell.setArrangeContactButtons(data: data)
@@ -108,7 +108,7 @@ extension HomeViewController: UITableViewDataSource {
         }
         else if let data = model[TableDataCellConstants.petScreenModel] as? [PetsInformationScreenModel] {
             
-            let cell: PetInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PetInfoTableViewCell",
+            let cell: PetInfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: StringConstants.petInfoTableViewCell,
                                                                            for: indexPath) as! PetInfoTableViewCell
             cell.selectionStyle = .none
             let cellData = data[indexPath.row]
@@ -157,10 +157,10 @@ extension HomeViewController {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         
-        tableView.register(UINib(nibName: "ContactDetailsTableViewCell", bundle: nil),
-                                forCellReuseIdentifier: "ContactDetailsTableViewCell")
-        tableView.register(UINib(nibName: "PetInfoTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "PetInfoTableViewCell")
+        tableView.register(UINib(nibName: StringConstants.contactDetailsTableViewCell, bundle: nil),
+                                forCellReuseIdentifier: StringConstants.contactDetailsTableViewCell)
+        tableView.register(UINib(nibName: StringConstants.petInfoTableViewCell, bundle: nil),
+                           forCellReuseIdentifier: StringConstants.petInfoTableViewCell)
     }
     
     private func setupLoader() {
@@ -203,7 +203,7 @@ extension HomeViewController {
     private func showAPIFailureErrorMessage(message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+        let alertAction = UIAlertAction(title: StringConstants.ok, style: .default, handler: { _ in
             //TODO: need to handle Try Again Action.
         })
         
@@ -224,7 +224,7 @@ extension HomeViewController {
     
     private func showAlert(message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alertAction = UIAlertAction(title: StringConstants.ok, style: .default, handler: nil)
         alertController.addAction(alertAction)
         self.present(alertController, animated: true, completion: nil)
     }

@@ -16,13 +16,13 @@ enum APIError : Error {
     var text : String {
         switch self {
         case .noInternet:
-            return "Please check your internet connection or try again later"
+            return StringConstants.noInternetError
         case .invalidJsonData:
-            return "Invalid json data from server. Please try again later."
+            return StringConstants.invalidJsonError
         case .somethingWentWrong:
-            return "We had trouble loading your screen. Please try again later."
+            return StringConstants.somethingWentWrongError
         case .badRequest:
-            return "Bad request"
+            return StringConstants.badRequestError
         }
     }
 }

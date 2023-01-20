@@ -45,6 +45,7 @@
 		9DAB43702978771800947759 /* PetsInformationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */; };
 		9DAB4372297879DB00947759 /* Date+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */; };
 		9DAB437429787EE300947759 /* ImageLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB437329787EE300947759 /* ImageLoaderTest.swift */; };
+		9DC36E20297AD2040083C3F3 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E1F297AD2040083C3F3 /* StringConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsInformationViewModelTest.swift; sourceTree = "<group>"; };
 		9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionTest.swift"; sourceTree = "<group>"; };
 		9DAB437329787EE300947759 /* ImageLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTest.swift; sourceTree = "<group>"; };
+		9DC36E1F297AD2040083C3F3 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 			children = (
 				9DAB43512975823400947759 /* ImageLoader.swift */,
 				9DAB435C2976D4D500947759 /* Date+Extension.swift */,
+				9DC36E1F297AD2040083C3F3 /* StringConstants.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DC36E20297AD2040083C3F3 /* StringConstants.swift in Sources */,
 				9DAB433F2972B1EF00947759 /* HomeScreenModel.swift in Sources */,
 				9DAB430F2972B04F00947759 /* HomeViewController.swift in Sources */,
 				9DAB430B2972B04F00947759 /* AppDelegate.swift in Sources */,

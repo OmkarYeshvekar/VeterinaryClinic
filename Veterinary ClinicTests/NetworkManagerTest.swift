@@ -36,7 +36,7 @@ class NetworkManagerTest: XCTestCase {
             MockURLProtocol.responseStatusCode = 200
         }
         
-        guard let url = URL(string: "https://f48ebf51-5871-40b3-9e8d-62d7bbf8a0a4.mock.pstmn.io/config/settings") else { return }
+        guard let url = URL(string: StringConstants.clinicConfigurationApi) else { return }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
         urlRequest.timeoutInterval = 30
@@ -77,7 +77,7 @@ class NetworkManagerTest: XCTestCase {
         networkManager?.fetch(completion: { (data, error) in
             XCTAssertNil(data)
             XCTAssertNotNil(error)
-            XCTAssertEqual(error?.text, "We had trouble loading your screen. Please try again later.")
+            XCTAssertEqual(error?.text, StringConstants.somethingWentWrongError)
             
             expectation.fulfill()
         })
@@ -93,7 +93,7 @@ class NetworkManagerTest: XCTestCase {
 
         MockURLProtocol.responseStatusCode = 501
         
-        guard let URL = URL(string: "https://f48ebf51-5871-40b3-9e8d-62d7bbf8a0a4.mock.pstmn.io/config/settings") else { return }
+        guard let URL = URL(string: StringConstants.clinicConfigurationApi) else { return }
         var urlRequest = URLRequest(url: URL)
         urlRequest.httpMethod = "GET"
         urlRequest.timeoutInterval = 30
@@ -106,7 +106,7 @@ class NetworkManagerTest: XCTestCase {
         networkManager?.fetch(completion: { (data, error) in
             XCTAssertNil(data)
             XCTAssertNotNil(error)
-            XCTAssertEqual(error?.text, "Bad request")
+            XCTAssertEqual(error?.text, StringConstants.badRequestError)
             
             expectation.fulfill()
         })

@@ -11,7 +11,7 @@ import Foundation
 struct ConfigScreenModel {
     var isChatHidden: Bool = false
     var isCallingHidden: Bool = false
-    var officeHours: String = "M-F 9:00 - 18:00"
+    var officeHours: String = StringConstants.defaultWorkHours
 }
 
 struct PetsInformationScreenModel {

@@ -16,8 +16,8 @@ protocol HomeViewModelProtocol {
 }
 
 struct TableDataCellConstants {
-    static let configScreenModel = "ConfigScreenModel"
-    static let petScreenModel = "PetScreenModel"
+    static let configScreenModel = StringConstants.configScreenModel
+    static let petScreenModel = StringConstants.petScreenModel
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -55,7 +55,7 @@ class HomeViewModel: HomeViewModelProtocol {
     
     
     func apiCallForClinicConfiguration(completion: @escaping () -> Void) {
-        let urlString = "https://f48ebf51-5871-40b3-9e8d-62d7bbf8a0a4.mock.pstmn.io/config/settings"
+        let urlString = StringConstants.clinicConfigurationApi
         apiFetcher?.getClinicConfiguration(urlString: urlString, completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -65,14 +65,13 @@ class HomeViewModel: HomeViewModelProtocol {
                 
             case .failure(let error):
                 self.hideProgress()
-                debugPrint("Something Went Wrong: ", error)
                 self.completionForAPIFailureMessage(error.text)
             }
         })
     }
     
     func apiCallForClinicPetsInformation(completion: @escaping () -> Void) {
-        let urlString = "https://40ccaa0a-2010-425a-9260-68294a2e54e2.mock.pstmn.io/petsinfo"
+        let urlString = StringConstants.clinicPetsInformationApi
         apiFetcher?.getClinicPetsInformation(urlString: urlString, completion: { [weak self] result in
             guard let self = self else { return }
             self.hideProgress()
@@ -82,7 +81,6 @@ class HomeViewModel: HomeViewModelProtocol {
                 completion()
                 
             case .failure(let error):
-                debugPrint("Something Went Wrong: ", error)
                 self.completionForAPIFailureMessage(error.text)
             }
         })
@@ -95,7 +93,7 @@ class HomeViewModel: HomeViewModelProtocol {
         var configInfo = ConfigScreenModel()
         configInfo = ConfigScreenModel(isChatHidden: !(settings.isChatEnabled ?? true),
                                        isCallingHidden: !(settings.isCallEnabled ?? true),
-                                       officeHours: settings.workHours ?? "M-F 9:00 - 18:00")
+                                       officeHours: settings.workHours ?? StringConstants.defaultWorkHours)
         self.configInfo = configInfo
     }
     
