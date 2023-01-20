@@ -46,6 +46,8 @@
 		9DAB4372297879DB00947759 /* Date+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */; };
 		9DAB437429787EE300947759 /* ImageLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB437329787EE300947759 /* ImageLoaderTest.swift */; };
 		9DC36E20297AD2040083C3F3 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E1F297AD2040083C3F3 /* StringConstants.swift */; };
+		9DC36E22297AEF6D0083C3F3 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */; };
+		9DC36E25297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionTest.swift"; sourceTree = "<group>"; };
 		9DAB437329787EE300947759 /* ImageLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTest.swift; sourceTree = "<group>"; };
 		9DC36E1F297AD2040083C3F3 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
+		9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewCellTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 		9DAB43202972B05200947759 /* Veterinary ClinicTests */ = {
 			isa = PBXGroup;
 			children = (
+				9DC36E23297AF4940083C3F3 /* View test */,
 				9DA3F34329792CE3001461E5 /* Mock files */,
 				9DAB43662978233E00947759 /* Mock Json */,
 				9DA3F3512979A786001461E5 /* NetworkManagerTest.swift */,
@@ -343,6 +348,15 @@
 				9DA3F34A297955B7001461E5 /* MockPetsInformationResponseModel_failure.json */,
 			);
 			name = "Mock Json";
+			sourceTree = "<group>";
+		};
+		9DC36E23297AF4940083C3F3 /* View test */ = {
+			isa = PBXGroup;
+			children = (
+				9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */,
+				9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */,
+			);
+			path = "View test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +527,8 @@
 				9DA3F35029799308001461E5 /* MockNetworkManager.swift in Sources */,
 				9DAB436329780AB800947759 /* MockHomeViewController.swift in Sources */,
 				9DAB4365297817C900947759 /* APIFetchertest.swift in Sources */,
+				9DC36E22297AEF6D0083C3F3 /* HomeViewControllerTest.swift in Sources */,
+				9DC36E25297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift in Sources */,
 				9DAB435F2978055600947759 /* HomeViewModelTest.swift in Sources */,
 				9DA3F34529792D38001461E5 /* MockURLProtocol.swift in Sources */,
 				9DAB43612978061A00947759 /* MockAPIFetcher.swift in Sources */,
