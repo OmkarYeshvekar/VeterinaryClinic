@@ -1,0 +1,853 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DA3F34529792D38001461E5 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3F34429792D38001461E5 /* MockURLProtocol.swift */; };
+		9DA3F34929794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3F34829794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json */; };
+		9DA3F34B297955B7001461E5 /* MockPetsInformationResponseModel_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3F34A297955B7001461E5 /* MockPetsInformationResponseModel_failure.json */; };
+		9DA3F34E29797195001461E5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3F34D29797195001461E5 /* NetworkManager.swift */; };
+		9DA3F35029799308001461E5 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3F34F29799308001461E5 /* MockNetworkManager.swift */; };
+		9DA3F3522979A786001461E5 /* NetworkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3F3512979A786001461E5 /* NetworkManagerTest.swift */; };
+		9DAB430B2972B04F00947759 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB430A2972B04F00947759 /* AppDelegate.swift */; };
+		9DAB430D2972B04F00947759 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB430C2972B04F00947759 /* SceneDelegate.swift */; };
+		9DAB430F2972B04F00947759 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB430E2972B04F00947759 /* HomeViewController.swift */; };
+		9DAB43122972B04F00947759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB43102972B04F00947759 /* Main.storyboard */; };
+		9DAB43142972B05100947759 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB43132972B05100947759 /* Assets.xcassets */; };
+		9DAB43172972B05100947759 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB43152972B05100947759 /* LaunchScreen.storyboard */; };
+		9DAB432C2972B05200947759 /* Veterinary_ClinicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB432B2972B05200947759 /* Veterinary_ClinicUITests.swift */; };
+		9DAB432E2972B05200947759 /* Veterinary_ClinicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB432D2972B05200947759 /* Veterinary_ClinicUITestsLaunchTests.swift */; };
+		9DAB433D2972B1C500947759 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB433C2972B1C500947759 /* HomeViewModel.swift */; };
+		9DAB433F2972B1EF00947759 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB433E2972B1EF00947759 /* HomeScreenModel.swift */; };
+		9DAB43442972B62600947759 /* ContactDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43422972B62600947759 /* ContactDetailsTableViewCell.swift */; };
+		9DAB43452972B62600947759 /* ContactDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB43432972B62600947759 /* ContactDetailsTableViewCell.xib */; };
+		9DAB434A2973EFC900947759 /* PetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43482973EFC900947759 /* PetInfoTableViewCell.swift */; };
+		9DAB434B2973EFC900947759 /* PetInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB43492973EFC900947759 /* PetInfoTableViewCell.xib */; };
+		9DAB434D297525DC00947759 /* PetsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB434C297525DB00947759 /* PetsInformationViewController.swift */; };
+		9DAB434F297525F200947759 /* PetsInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB434E297525F200947759 /* PetsInformationViewModel.swift */; };
+		9DAB43522975823400947759 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43512975823400947759 /* ImageLoader.swift */; };
+		9DAB43552975A8DD00947759 /* ConfigSettingsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43542975A8DD00947759 /* ConfigSettingsResponseModel.swift */; };
+		9DAB43572975A9E000947759 /* PetsInformationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43562975A9E000947759 /* PetsInformationResponseModel.swift */; };
+		9DAB43592975AD3300947759 /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43582975AD3300947759 /* APIFetcher.swift */; };
+		9DAB435B2975D41100947759 /* APIErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB435A2975D41100947759 /* APIErrorMessage.swift */; };
+		9DAB435D2976D4D500947759 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB435C2976D4D500947759 /* Date+Extension.swift */; };
+		9DAB435F2978055600947759 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB435E2978055600947759 /* HomeViewModelTest.swift */; };
+		9DAB43612978061A00947759 /* MockAPIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB43602978061A00947759 /* MockAPIFetcher.swift */; };
+		9DAB436329780AB800947759 /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB436229780AB800947759 /* MockHomeViewController.swift */; };
+		9DAB4365297817C900947759 /* APIFetchertest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB4364297817C900947759 /* APIFetchertest.swift */; };
+		9DAB4368297823D300947759 /* MockConfigSettingsResponseModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB4367297823D300947759 /* MockConfigSettingsResponseModel.json */; };
+		9DAB436A2978240B00947759 /* MockPetsInformationResponseModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DAB43692978240B00947759 /* MockPetsInformationResponseModel.json */; };
+		9DAB436E2978768D00947759 /* MockPetsInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB436D2978768D00947759 /* MockPetsInformationViewController.swift */; };
+		9DAB43702978771800947759 /* PetsInformationViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */; };
+		9DAB4372297879DB00947759 /* Date+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */; };
+		9DAB437429787EE300947759 /* ImageLoaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAB437329787EE300947759 /* ImageLoaderTest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DAB431E2972B05200947759 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DAB42FF2972B04F00947759 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DAB43062972B04F00947759;
+			remoteInfo = "Veterinary Clinic";
+		};
+		9DAB43282972B05200947759 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DAB42FF2972B04F00947759 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DAB43062972B04F00947759;
+			remoteInfo = "Veterinary Clinic";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9DA3F34429792D38001461E5 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		9DA3F34829794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockConfigSettingsResponseModel_failure.json; sourceTree = "<group>"; };
+		9DA3F34A297955B7001461E5 /* MockPetsInformationResponseModel_failure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPetsInformationResponseModel_failure.json; sourceTree = "<group>"; };
+		9DA3F34D29797195001461E5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9DA3F34F29799308001461E5 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		9DA3F3512979A786001461E5 /* NetworkManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTest.swift; sourceTree = "<group>"; };
+		9DAB43072972B04F00947759 /* Veterinary Clinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Veterinary Clinic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DAB430A2972B04F00947759 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9DAB430C2972B04F00947759 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9DAB430E2972B04F00947759 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9DAB43112972B04F00947759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DAB43132972B05100947759 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DAB43162972B05100947759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DAB43182972B05100947759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DAB431D2972B05200947759 /* Veterinary ClinicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Veterinary ClinicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DAB43272972B05200947759 /* Veterinary ClinicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Veterinary ClinicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DAB432B2972B05200947759 /* Veterinary_ClinicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Veterinary_ClinicUITests.swift; sourceTree = "<group>"; };
+		9DAB432D2972B05200947759 /* Veterinary_ClinicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Veterinary_ClinicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9DAB433C2972B1C500947759 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9DAB433E2972B1EF00947759 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
+		9DAB43422972B62600947759 /* ContactDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		9DAB43432972B62600947759 /* ContactDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		9DAB43482973EFC900947759 /* PetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCell.swift; sourceTree = "<group>"; };
+		9DAB43492973EFC900947759 /* PetInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetInfoTableViewCell.xib; sourceTree = "<group>"; };
+		9DAB434C297525DB00947759 /* PetsInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsInformationViewController.swift; sourceTree = "<group>"; };
+		9DAB434E297525F200947759 /* PetsInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsInformationViewModel.swift; sourceTree = "<group>"; };
+		9DAB43512975823400947759 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		9DAB43542975A8DD00947759 /* ConfigSettingsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSettingsResponseModel.swift; sourceTree = "<group>"; };
+		9DAB43562975A9E000947759 /* PetsInformationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsInformationResponseModel.swift; sourceTree = "<group>"; };
+		9DAB43582975AD3300947759 /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
+		9DAB435A2975D41100947759 /* APIErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorMessage.swift; sourceTree = "<group>"; };
+		9DAB435C2976D4D500947759 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9DAB435E2978055600947759 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		9DAB43602978061A00947759 /* MockAPIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIFetcher.swift; sourceTree = "<group>"; };
+		9DAB436229780AB800947759 /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		9DAB4364297817C900947759 /* APIFetchertest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetchertest.swift; sourceTree = "<group>"; };
+		9DAB4367297823D300947759 /* MockConfigSettingsResponseModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockConfigSettingsResponseModel.json; sourceTree = "<group>"; };
+		9DAB43692978240B00947759 /* MockPetsInformationResponseModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPetsInformationResponseModel.json; sourceTree = "<group>"; };
+		9DAB436D2978768D00947759 /* MockPetsInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPetsInformationViewController.swift; sourceTree = "<group>"; };
+		9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsInformationViewModelTest.swift; sourceTree = "<group>"; };
+		9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionTest.swift"; sourceTree = "<group>"; };
+		9DAB437329787EE300947759 /* ImageLoaderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DAB43042972B04F00947759 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DAB431A2972B05200947759 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DAB43242972B05200947759 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D91BDD9297A7F71000003F2 /* Pets Information */ = {
+			isa = PBXGroup;
+			children = (
+				9D91BDE3297A8FD4000003F2 /* Pets Information */,
+				9D91BDE2297A8FC0000003F2 /* ViewModel */,
+				9D91BDE1297A8FB4000003F2 /* View */,
+			);
+			name = "Pets Information";
+			sourceTree = "<group>";
+		};
+		9D91BDDA297A7F96000003F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB430E2972B04F00947759 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D91BDDB297A7F9D000003F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB433C2972B1C500947759 /* HomeViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D91BDDC297A7FA7000003F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB433E2972B1EF00947759 /* HomeScreenModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9D91BDDD297A7FC0000003F2 /* Contact Details */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43422972B62600947759 /* ContactDetailsTableViewCell.swift */,
+				9DAB43432972B62600947759 /* ContactDetailsTableViewCell.xib */,
+			);
+			path = "Contact Details";
+			sourceTree = "<group>";
+		};
+		9D91BDDE297A800D000003F2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43102972B04F00947759 /* Main.storyboard */,
+				9DAB43152972B05100947759 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		9D91BDE1297A8FB4000003F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB434C297525DB00947759 /* PetsInformationViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9D91BDE2297A8FC0000003F2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB434E297525F200947759 /* PetsInformationViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D91BDE3297A8FD4000003F2 /* Pets Information */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43482973EFC900947759 /* PetInfoTableViewCell.swift */,
+				9DAB43492973EFC900947759 /* PetInfoTableViewCell.xib */,
+			);
+			name = "Pets Information";
+			sourceTree = "<group>";
+		};
+		9DA3F34329792CE3001461E5 /* Mock files */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43602978061A00947759 /* MockAPIFetcher.swift */,
+				9DAB436D2978768D00947759 /* MockPetsInformationViewController.swift */,
+				9DAB436229780AB800947759 /* MockHomeViewController.swift */,
+				9DA3F34429792D38001461E5 /* MockURLProtocol.swift */,
+				9DA3F34F29799308001461E5 /* MockNetworkManager.swift */,
+			);
+			path = "Mock files";
+			sourceTree = "<group>";
+		};
+		9DA3F34C29797174001461E5 /* Response Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43562975A9E000947759 /* PetsInformationResponseModel.swift */,
+				9DAB43542975A8DD00947759 /* ConfigSettingsResponseModel.swift */,
+			);
+			name = "Response Model";
+			sourceTree = "<group>";
+		};
+		9DAB42FE2972B04F00947759 = {
+			isa = PBXGroup;
+			children = (
+				9DAB43092972B04F00947759 /* Veterinary Clinic */,
+				9DAB43202972B05200947759 /* Veterinary ClinicTests */,
+				9DAB432A2972B05200947759 /* Veterinary ClinicUITests */,
+				9DAB43082972B04F00947759 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DAB43082972B04F00947759 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43072972B04F00947759 /* Veterinary Clinic.app */,
+				9DAB431D2972B05200947759 /* Veterinary ClinicTests.xctest */,
+				9DAB43272972B05200947759 /* Veterinary ClinicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DAB43092972B04F00947759 /* Veterinary Clinic */ = {
+			isa = PBXGroup;
+			children = (
+				9D91BDDE297A800D000003F2 /* Storyboard */,
+				9DAB43532975A84A00947759 /* Network */,
+				9DAB43502975822500947759 /* Helper */,
+				9DAB433B2972B13900947759 /* AppDelegate */,
+				9DAB433A2972B12300947759 /* Home Screen */,
+				9D91BDD9297A7F71000003F2 /* Pets Information */,
+				9DAB43132972B05100947759 /* Assets.xcassets */,
+				9DAB43182972B05100947759 /* Info.plist */,
+			);
+			path = "Veterinary Clinic";
+			sourceTree = "<group>";
+		};
+		9DAB43202972B05200947759 /* Veterinary ClinicTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DA3F34329792CE3001461E5 /* Mock files */,
+				9DAB43662978233E00947759 /* Mock Json */,
+				9DA3F3512979A786001461E5 /* NetworkManagerTest.swift */,
+				9DAB435E2978055600947759 /* HomeViewModelTest.swift */,
+				9DAB4364297817C900947759 /* APIFetchertest.swift */,
+				9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */,
+				9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */,
+				9DAB437329787EE300947759 /* ImageLoaderTest.swift */,
+			);
+			path = "Veterinary ClinicTests";
+			sourceTree = "<group>";
+		};
+		9DAB432A2972B05200947759 /* Veterinary ClinicUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB432B2972B05200947759 /* Veterinary_ClinicUITests.swift */,
+				9DAB432D2972B05200947759 /* Veterinary_ClinicUITestsLaunchTests.swift */,
+			);
+			path = "Veterinary ClinicUITests";
+			sourceTree = "<group>";
+		};
+		9DAB433A2972B12300947759 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9D91BDDD297A7FC0000003F2 /* Contact Details */,
+				9D91BDDC297A7FA7000003F2 /* Model */,
+				9D91BDDB297A7F9D000003F2 /* ViewModel */,
+				9D91BDDA297A7F96000003F2 /* View */,
+			);
+			name = "Home Screen";
+			sourceTree = "<group>";
+		};
+		9DAB433B2972B13900947759 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB430A2972B04F00947759 /* AppDelegate.swift */,
+				9DAB430C2972B04F00947759 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9DAB43502975822500947759 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB43512975823400947759 /* ImageLoader.swift */,
+				9DAB435C2976D4D500947759 /* Date+Extension.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		9DAB43532975A84A00947759 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9DA3F34C29797174001461E5 /* Response Model */,
+				9DAB43582975AD3300947759 /* APIFetcher.swift */,
+				9DAB435A2975D41100947759 /* APIErrorMessage.swift */,
+				9DA3F34D29797195001461E5 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9DAB43662978233E00947759 /* Mock Json */ = {
+			isa = PBXGroup;
+			children = (
+				9DAB4367297823D300947759 /* MockConfigSettingsResponseModel.json */,
+				9DAB43692978240B00947759 /* MockPetsInformationResponseModel.json */,
+				9DA3F34829794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json */,
+				9DA3F34A297955B7001461E5 /* MockPetsInformationResponseModel_failure.json */,
+			);
+			name = "Mock Json";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DAB43062972B04F00947759 /* Veterinary Clinic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DAB43312972B05200947759 /* Build configuration list for PBXNativeTarget "Veterinary Clinic" */;
+			buildPhases = (
+				9DAB43032972B04F00947759 /* Sources */,
+				9DAB43042972B04F00947759 /* Frameworks */,
+				9DAB43052972B04F00947759 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Veterinary Clinic";
+			productName = "Veterinary Clinic";
+			productReference = 9DAB43072972B04F00947759 /* Veterinary Clinic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DAB431C2972B05200947759 /* Veterinary ClinicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DAB43342972B05200947759 /* Build configuration list for PBXNativeTarget "Veterinary ClinicTests" */;
+			buildPhases = (
+				9DAB43192972B05200947759 /* Sources */,
+				9DAB431A2972B05200947759 /* Frameworks */,
+				9DAB431B2972B05200947759 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DAB431F2972B05200947759 /* PBXTargetDependency */,
+			);
+			name = "Veterinary ClinicTests";
+			productName = "Veterinary ClinicTests";
+			productReference = 9DAB431D2972B05200947759 /* Veterinary ClinicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9DAB43262972B05200947759 /* Veterinary ClinicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DAB43372972B05200947759 /* Build configuration list for PBXNativeTarget "Veterinary ClinicUITests" */;
+			buildPhases = (
+				9DAB43232972B05200947759 /* Sources */,
+				9DAB43242972B05200947759 /* Frameworks */,
+				9DAB43252972B05200947759 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DAB43292972B05200947759 /* PBXTargetDependency */,
+			);
+			name = "Veterinary ClinicUITests";
+			productName = "Veterinary ClinicUITests";
+			productReference = 9DAB43272972B05200947759 /* Veterinary ClinicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DAB42FF2972B04F00947759 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					9DAB43062972B04F00947759 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					9DAB431C2972B05200947759 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 9DAB43062972B04F00947759;
+					};
+					9DAB43262972B05200947759 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 9DAB43062972B04F00947759;
+					};
+				};
+			};
+			buildConfigurationList = 9DAB43022972B04F00947759 /* Build configuration list for PBXProject "Veterinary Clinic" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DAB42FE2972B04F00947759;
+			productRefGroup = 9DAB43082972B04F00947759 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DAB43062972B04F00947759 /* Veterinary Clinic */,
+				9DAB431C2972B05200947759 /* Veterinary ClinicTests */,
+				9DAB43262972B05200947759 /* Veterinary ClinicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DAB43052972B04F00947759 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DAB43172972B05100947759 /* LaunchScreen.storyboard in Resources */,
+				9DAB43452972B62600947759 /* ContactDetailsTableViewCell.xib in Resources */,
+				9DAB43142972B05100947759 /* Assets.xcassets in Resources */,
+				9DAB434B2973EFC900947759 /* PetInfoTableViewCell.xib in Resources */,
+				9DAB43122972B04F00947759 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DAB431B2972B05200947759 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA3F34B297955B7001461E5 /* MockPetsInformationResponseModel_failure.json in Resources */,
+				9DAB4368297823D300947759 /* MockConfigSettingsResponseModel.json in Resources */,
+				9DAB436A2978240B00947759 /* MockPetsInformationResponseModel.json in Resources */,
+				9DA3F34929794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DAB43252972B05200947759 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DAB43032972B04F00947759 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DAB433F2972B1EF00947759 /* HomeScreenModel.swift in Sources */,
+				9DAB430F2972B04F00947759 /* HomeViewController.swift in Sources */,
+				9DAB430B2972B04F00947759 /* AppDelegate.swift in Sources */,
+				9DAB435B2975D41100947759 /* APIErrorMessage.swift in Sources */,
+				9DAB435D2976D4D500947759 /* Date+Extension.swift in Sources */,
+				9DAB43572975A9E000947759 /* PetsInformationResponseModel.swift in Sources */,
+				9DAB434D297525DC00947759 /* PetsInformationViewController.swift in Sources */,
+				9DAB43592975AD3300947759 /* APIFetcher.swift in Sources */,
+				9DAB43522975823400947759 /* ImageLoader.swift in Sources */,
+				9DA3F34E29797195001461E5 /* NetworkManager.swift in Sources */,
+				9DAB434F297525F200947759 /* PetsInformationViewModel.swift in Sources */,
+				9DAB43442972B62600947759 /* ContactDetailsTableViewCell.swift in Sources */,
+				9DAB434A2973EFC900947759 /* PetInfoTableViewCell.swift in Sources */,
+				9DAB43552975A8DD00947759 /* ConfigSettingsResponseModel.swift in Sources */,
+				9DAB430D2972B04F00947759 /* SceneDelegate.swift in Sources */,
+				9DAB433D2972B1C500947759 /* HomeViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DAB43192972B05200947759 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA3F3522979A786001461E5 /* NetworkManagerTest.swift in Sources */,
+				9DAB43702978771800947759 /* PetsInformationViewModelTest.swift in Sources */,
+				9DAB4372297879DB00947759 /* Date+ExtensionTest.swift in Sources */,
+				9DAB437429787EE300947759 /* ImageLoaderTest.swift in Sources */,
+				9DA3F35029799308001461E5 /* MockNetworkManager.swift in Sources */,
+				9DAB436329780AB800947759 /* MockHomeViewController.swift in Sources */,
+				9DAB4365297817C900947759 /* APIFetchertest.swift in Sources */,
+				9DAB435F2978055600947759 /* HomeViewModelTest.swift in Sources */,
+				9DA3F34529792D38001461E5 /* MockURLProtocol.swift in Sources */,
+				9DAB43612978061A00947759 /* MockAPIFetcher.swift in Sources */,
+				9DAB436E2978768D00947759 /* MockPetsInformationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DAB43232972B05200947759 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DAB432C2972B05200947759 /* Veterinary_ClinicUITests.swift in Sources */,
+				9DAB432E2972B05200947759 /* Veterinary_ClinicUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DAB431F2972B05200947759 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DAB43062972B04F00947759 /* Veterinary Clinic */;
+			targetProxy = 9DAB431E2972B05200947759 /* PBXContainerItemProxy */;
+		};
+		9DAB43292972B05200947759 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DAB43062972B04F00947759 /* Veterinary Clinic */;
+			targetProxy = 9DAB43282972B05200947759 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9DAB43102972B04F00947759 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DAB43112972B04F00947759 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9DAB43152972B05100947759 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DAB43162972B05100947759 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9DAB432F2972B05200947759 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9DAB43302972B05200947759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DAB43322972B05200947759 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MKV946HZ9G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Veterinary Clinic/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "synechron.Veterinary-Clinic";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DAB43332972B05200947759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MKV946HZ9G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Veterinary Clinic/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "synechron.Veterinary-Clinic";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9DAB43352972B05200947759 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MKV946HZ9G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "synechron.Veterinary-ClinicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Veterinary Clinic.app/Veterinary Clinic";
+			};
+			name = Debug;
+		};
+		9DAB43362972B05200947759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MKV946HZ9G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "synechron.Veterinary-ClinicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Veterinary Clinic.app/Veterinary Clinic";
+			};
+			name = Release;
+		};
+		9DAB43382972B05200947759 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MKV946HZ9G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "synechron.Veterinary-ClinicUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Veterinary Clinic";
+			};
+			name = Debug;
+		};
+		9DAB43392972B05200947759 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MKV946HZ9G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "synechron.Veterinary-ClinicUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Veterinary Clinic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DAB43022972B04F00947759 /* Build configuration list for PBXProject "Veterinary Clinic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAB432F2972B05200947759 /* Debug */,
+				9DAB43302972B05200947759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DAB43312972B05200947759 /* Build configuration list for PBXNativeTarget "Veterinary Clinic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAB43322972B05200947759 /* Debug */,
+				9DAB43332972B05200947759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DAB43342972B05200947759 /* Build configuration list for PBXNativeTarget "Veterinary ClinicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAB43352972B05200947759 /* Debug */,
+				9DAB43362972B05200947759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DAB43372972B05200947759 /* Build configuration list for PBXNativeTarget "Veterinary ClinicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DAB43382972B05200947759 /* Debug */,
+				9DAB43392972B05200947759 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DAB42FF2972B04F00947759 /* Project object */;
+}
