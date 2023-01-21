@@ -48,6 +48,7 @@
 		9DC36E20297AD2040083C3F3 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E1F297AD2040083C3F3 /* StringConstants.swift */; };
 		9DC36E22297AEF6D0083C3F3 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */; };
 		9DC36E25297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */; };
+		9DC7A1B8297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		9DC36E1F297AD2040083C3F3 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewCellTest.swift; sourceTree = "<group>"; };
+		9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCellTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 			children = (
 				9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */,
 				9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */,
+				9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */,
 			);
 			path = "View test";
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				9DA3F34529792D38001461E5 /* MockURLProtocol.swift in Sources */,
 				9DAB43612978061A00947759 /* MockAPIFetcher.swift in Sources */,
 				9DAB436E2978768D00947759 /* MockPetsInformationViewController.swift in Sources */,
+				9DC7A1B8297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
