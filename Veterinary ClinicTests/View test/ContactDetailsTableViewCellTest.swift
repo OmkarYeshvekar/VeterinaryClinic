@@ -72,6 +72,68 @@ class ContactDetailsTableViewCellTest: XCTestCase {
     }
     
     
+    func test_contactMethodButton_checkForWeekEnd_OFH() throws {
+        let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
+        cell.awakeFromNib()
+
+        let contactMethodButton = try XCTUnwrap(cell.contactMethodButton, "This button is not connected to IBOutlet")
+        
+        cell.contactMethodButtonClicked = { message in
+            XCTAssertEqual(message, StringConstants.workHourEndMessage)
+        }
+        
+        if let action = contactMethodButton.actions(forTarget: cell, forControlEvent: .touchUpInside) {
+            XCTAssertEqual(action.count, 1)
+            XCTAssertEqual(action.first, "contactMethodButtonClicked:", "There is no any such action attached with name contactMethodButtonClicked:")
+        }
+        
+        cell.currentDate = getCurrentDate(date: "2023-01-22T10:44:00+0000")
+         
+        cell.contactMethodButtonClicked(contactMethodButton)
+    }
+    
+    func test_chatButton_contactWithInOfficeHours() throws {
+        let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
+        cell.awakeFromNib()
+
+        let chatButton = try XCTUnwrap(cell.chatButton, "This button is not connected to IBOutlet")
+        
+        cell.chatButtonClicked = { message in
+            XCTAssertEqual(message, StringConstants.thankYouMessage)
+        }
+        
+        if let action = chatButton.actions(forTarget: cell, forControlEvent: .touchUpInside) {
+            XCTAssertEqual(action.count, 1)
+            XCTAssertEqual(action.first, "chatButtonClicked:", "There is no any such action attached with name chatButtonClicked:")
+        }
+        
+        cell.currentDate = getCurrentDate(date: "2023-01-23T10:44:00+0000")
+         
+        cell.chatButtonClicked(chatButton)
+    }
+    
+    
+    
+    func test_callButton_contactOFH() throws {
+        let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
+        cell.awakeFromNib()
+
+        let callButton = try XCTUnwrap(cell.callButton, "This button is not connected to IBOutlet")
+        
+        cell.callButtonClicked = { message in
+            XCTAssertEqual(message, StringConstants.workHourEndMessage)
+        }
+        
+        if let action = callButton.actions(forTarget: cell, forControlEvent: .touchUpInside) {
+            XCTAssertEqual(action.count, 1)
+            XCTAssertEqual(action.first, "callButtonClicked:", "There is no any such action attached with name callButtonClicked:")
+        }
+        
+        cell.currentDate = getCurrentDate(date: "2023-01-23T19:44:00+0000")
+         
+        cell.callButtonClicked(callButton)
+    }
+    
     
     
     private func setConfigScreenModel(isChatHidden: Bool, isCallingHidden: Bool) -> ConfigScreenModel {
@@ -80,6 +142,15 @@ class ContactDetailsTableViewCellTest: XCTestCase {
                                        isCallingHidden: isCallingHidden,
                                        officeHours: StringConstants.defaultWorkHours)
         return config
+    }
+    
+    private func getCurrentDate(date: String) -> Date {
+        let isoDate = date
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from:isoDate)!
+        return date
     }
     
 

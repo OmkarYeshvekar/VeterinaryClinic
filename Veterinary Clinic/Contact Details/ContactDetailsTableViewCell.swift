@@ -20,6 +20,8 @@ class ContactDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var officeHoursButton: UIButton!
     
+    var currentDate: Date? = nil
+    
     var chatButtonClicked: (_ message: String) -> Void = {_ in}
     var callButtonClicked: (_ message: String) -> Void = {_ in}
     var contactMethodButtonClicked: (_ message: String) -> Void = {_ in}
@@ -93,11 +95,11 @@ class ContactDetailsTableViewCell: UITableViewCell {
     private func checkClinicTimings() -> String {
         let saturday = StringConstants.saturday
         let sunday = StringConstants.sunday
+        let now = self.currentDate ?? Date()
         
-        let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
-        let day = dateFormatter.string(from: currentDate).capitalized.lowercased()
+        let day = dateFormatter.string(from: now).capitalized.lowercased()
         
         if day == saturday || day == sunday {
             //NOTE: it seems to be a weekEnd. Out of office hours.
@@ -110,18 +112,17 @@ class ContactDetailsTableViewCell: UITableViewCell {
             let dateFormatter = DateFormatter()
             //NOTE: change to a readable time format and change to local time zone
             dateFormatter.dateFormat = "HH:mm"
-            let timeStamp = dateFormatter.string(from: currentDate)
+            let timeStamp = dateFormatter.string(from: now)
             debugPrint("Time stamp: ", timeStamp)
             
-            let openHours = currentDate.dateAt(hours: 10, minutes: 00)
-            let closeHours = currentDate.dateAt(hours: 18, minutes: 00)
+            let openHours = now.dateAt(hours: 10, minutes: 00)
+            let closeHours = now.dateAt(hours: 18, minutes: 00)
             
-            if currentDate >= openHours && currentDate <= closeHours {
+            if now >= openHours && now <= closeHours {
                 return StringConstants.thankYouMessage
             } else {
                 return StringConstants.workHourEndMessage
             }
         }
     }
-
 }

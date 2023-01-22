@@ -85,6 +85,7 @@ extension HomeViewController: UITableViewDataSource {
                                                      for: indexPath) as! ContactDetailsTableViewCell
             cell.selectionStyle = .none
             cell.setArrangeContactButtons(data: data)
+            cell.currentDate = Date()
             
             cell.chatButtonClicked = { [weak self] message in
                 guard let self = self else { return }
@@ -203,8 +204,9 @@ extension HomeViewController {
     private func showAPIFailureErrorMessage(message: String) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
-        let alertAction = UIAlertAction(title: StringConstants.ok, style: .default, handler: { _ in
-            //TODO: need to handle Try Again Action.
+        let alertAction = UIAlertAction(title: StringConstants.ok, style: .default, handler: {  [weak self] _ in
+            guard let self = self else { return }
+            self.viewModel.handleApiCalls()
         })
         
         alertController.addAction(alertAction)
