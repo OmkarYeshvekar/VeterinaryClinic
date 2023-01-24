@@ -54,14 +54,19 @@ class ContactDetailsTableViewCell: UITableViewCell {
     
     func setArrangeContactButtons(data: ConfigScreenModel) {
         
-        self.officeHoursButton.setTitle("Office Hours: \(data.officeHours)", for: .normal)
-        if data.isChatHidden && data.isCallingHidden {
+        guard let officeHours = data.officeHours,
+                let isChatHidden = data.isChatHidden,
+                let isCallingHidden = data.isCallingHidden  else { return }
+        
+        
+        self.officeHoursButton.setTitle("Office Hours: \(officeHours)", for: .normal)
+        if isChatHidden && isCallingHidden {
             self.contactMethodButton.isHidden = true
             self.innerView.isHidden = true
         } else {
             
-            let chatEnabled = !data.isChatHidden
-            let callEnabled = !data.isCallingHidden
+            let chatEnabled = !isChatHidden
+            let callEnabled = !isCallingHidden
             
             if chatEnabled && callEnabled {
                 self.contactMethodButton.isHidden = true

@@ -221,7 +221,10 @@ extension HomeViewController {
         let viewModel = PetsInformationViewModel(contentUrl: contentUrl)
         viewModel.view = viewController
         viewController.viewModel = viewModel
-        self.navigationController?.pushViewController(viewController, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     private func showAlert(message: String) {

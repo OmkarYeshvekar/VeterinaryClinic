@@ -17,10 +17,17 @@ class PetsInformationViewController: UIViewController {
     
     var viewModel: PetsInformationViewModelProtocol?
     
-    @IBOutlet weak var webView: WKWebView!
+    private lazy var webView: WKWebView = {
+        let webConfiguration = WKWebViewConfiguration()
+        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        return webView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setWebView()
         viewModel?.configUrlForWebView()
     }
     
@@ -28,13 +35,16 @@ class PetsInformationViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
-        view = webView
+    private func setWebView() {
+        self.view.backgroundColor = .white
+        self.view.addSubview(webView)
+        NSLayoutConstraint.activate([
+            webView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            webView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
     }
-    
 }
 
 extension PetsInformationViewController: PetsInformationViewControllerProtocol {

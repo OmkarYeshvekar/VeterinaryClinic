@@ -48,8 +48,12 @@ class HomeViewModelTest: XCTestCase {
         let model = homeViewModel?.tableViewData[0]
         
         if let data = model?[TableDataCellConstants.configScreenModel] as? ConfigScreenModel {
-            XCTAssertFalse(data.isCallingHidden)
-            XCTAssertFalse(data.isChatHidden)
+            
+            guard let isCallingHidden = data.isCallingHidden,
+                  let isChatHidden = data.isChatHidden else { return }
+            
+            XCTAssertFalse(isCallingHidden)
+            XCTAssertFalse(isChatHidden)
             XCTAssertEqual(data.officeHours, "M-F 9:00 - 18:00")
         }
         

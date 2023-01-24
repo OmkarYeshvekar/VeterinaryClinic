@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Veterinary Clinic" id="Zpx-dI-Zqf"/>
                     <connections>
                         <outlet property="tableView" destination="lEy-Qa-8Yv" id="jTK-P0-wRg"/>
-                        <segue destination="2Fh-yu-d0p" kind="push" id="hmh-mB-neq"/>
+                        <segue destination="2Fh-yu-d0p" kind="push" id="Nnb-jH-eWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -47,29 +47,10 @@
                     <view key="view" contentMode="scaleToFill" id="6Fg-oM-smZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-nk-HyZ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Mwk-KF-CdL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="UgW-nk-HyZ" firstAttribute="leading" secondItem="Mwk-KF-CdL" secondAttribute="leading" id="AXs-Pi-we0"/>
-                            <constraint firstItem="Mwk-KF-CdL" firstAttribute="bottom" secondItem="UgW-nk-HyZ" secondAttribute="bottom" id="KEL-4N-vHW"/>
-                            <constraint firstItem="Mwk-KF-CdL" firstAttribute="trailing" secondItem="UgW-nk-HyZ" secondAttribute="trailing" id="SFX-5H-Wip"/>
-                            <constraint firstItem="UgW-nk-HyZ" firstAttribute="top" secondItem="Mwk-KF-CdL" secondAttribute="top" id="c51-gJ-V6q"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pet Information" id="0ig-7y-WVJ"/>
-                    <connections>
-                        <outlet property="webView" destination="UgW-nk-HyZ" id="cXv-qj-fuK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIr-1d-2VD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

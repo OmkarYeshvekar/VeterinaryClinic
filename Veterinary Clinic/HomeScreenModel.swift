@@ -9,9 +9,9 @@ import Foundation
 
 
 struct ConfigScreenModel {
-    var isChatHidden: Bool = false
-    var isCallingHidden: Bool = false
-    var officeHours: String = StringConstants.defaultWorkHours
+    var isChatHidden: Bool?
+    var isCallingHidden: Bool?
+    var officeHours: String?
 }
 
 struct PetsInformationScreenModel {
