@@ -22,8 +22,6 @@ class MockURLProtocol: URLProtocol {
     }
     
     override func startLoading() {
-//        self.client?.urlProtocol(self, didLoad: MockURLProtocol.stubResponseData ?? Data())
-        
         let response: HTTPURLResponse = HTTPURLResponse(url: MockURLProtocol.url,
                                                         statusCode: MockURLProtocol.responseStatusCode,
                                                         httpVersion: nil,

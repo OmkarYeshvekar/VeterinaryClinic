@@ -85,22 +85,24 @@ extension HomeViewController: UITableViewDataSource {
                                                      for: indexPath) as! ContactDetailsTableViewCell
             cell.selectionStyle = .none
             cell.setArrangeContactButtons(data: data)
-            cell.currentDate = Date()
             
-            cell.chatButtonClicked = { [weak self] message in
+            cell.chatButtonClicked = { [weak self] in
                 guard let self = self else { return }
+                let message = self.viewModel.checkClinicTimings(currentDate: Date())
                 debugPrint(message)
                 self.showAlert(message: message)
             }
             
-            cell.callButtonClicked = { [weak self] message in
+            cell.callButtonClicked = { [weak self] in
                 guard let self = self else { return }
+                let message = self.viewModel.checkClinicTimings(currentDate: Date())
                 debugPrint(message)
                 self.showAlert(message: message)
             }
             
-            cell.contactMethodButtonClicked = { [weak self] message in
+            cell.contactMethodButtonClicked = { [weak self] in
                 guard let self = self else { return }
+                let message = self.viewModel.checkClinicTimings(currentDate: Date())
                 debugPrint(message)
                 self.showAlert(message: message)
             }

@@ -49,11 +49,11 @@ class HomeViewModelTest: XCTestCase {
         
         if let data = model?[TableDataCellConstants.configScreenModel] as? ConfigScreenModel {
             
-            guard let isCallingHidden = data.isCallingHidden,
-                  let isChatHidden = data.isChatHidden else { return }
+            guard let isCallEnabled = data.isCallEnabled,
+                  let isChatEnabled = data.isChatEnabled else { return }
             
-            XCTAssertFalse(isCallingHidden)
-            XCTAssertFalse(isChatHidden)
+            XCTAssertTrue(isCallEnabled)
+            XCTAssertTrue(isChatEnabled)
             XCTAssertEqual(data.officeHours, "M-F 9:00 - 18:00")
         }
         
@@ -89,8 +89,6 @@ class HomeViewModelTest: XCTestCase {
         XCTAssertTrue(mockHomeViewController?.showAPIFailureErrorMessageCalled ?? false)
     }
     
-    
-    
     func test_handleApiCalls_PetsInformation_Failure() {
 
         let mockAPIFetcher = MockAPIFetcher(executionCases: .failure)
@@ -108,4 +106,33 @@ class HomeViewModelTest: XCTestCase {
         XCTAssertTrue(mockHomeViewController?.showAPIFailureErrorMessageCalled ?? false)
     }
     
+    func test_OFH() throws {
+        let currentDate = getCurrentDate(date: "2023-01-25T13:14:00+0000")
+        homeViewModel?.officeHours = "M-F 9:00 - 17:00"
+        let message = homeViewModel?.checkClinicTimings(currentDate: currentDate)
+        XCTAssertEqual(message, StringConstants.workHourEndMessage)
+    }
+    
+    func test_contactWithInOfficeHours() throws {
+        let currentDate = getCurrentDate(date: "2023-01-25T10:44:00+0000")
+        homeViewModel?.officeHours = "M-F 9:00 - 18:00"
+        let message = homeViewModel?.checkClinicTimings(currentDate: currentDate)
+        XCTAssertEqual(message, StringConstants.thankYouMessage)
+    }
+    
+    func test_checkWeekEnd_OFH() throws {
+        let currentDate = getCurrentDate(date: "2023-01-28T19:44:00+0000")
+        homeViewModel?.officeHours = "M-F 9:00 - 18:00"
+        let message = homeViewModel?.checkClinicTimings(currentDate: currentDate)
+        XCTAssertEqual(message, StringConstants.workHourEndMessage)
+    }
+    
+    private func getCurrentDate(date: String) -> Date {
+        let isoDate = date
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from:isoDate)!
+        return date
+    }
 }

@@ -23,6 +23,7 @@ struct StringConstants {
     static let defaultWorkHours = "M-F 9:00 - 18:00"
     static let chatString = "Chat"
     static let callString = "Call"
+    static let issueInContactingClinic = "There is some issue connecting clinic. Please try again"
     
     //MARK: API call Endpoints
     static let clinicConfigurationApi = "https://f48ebf51-5871-40b3-9e8d-62d7bbf8a0a4.mock.pstmn.io/config/settings"

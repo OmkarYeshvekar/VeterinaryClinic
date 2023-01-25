@@ -13,6 +13,7 @@ protocol HomeViewModelProtocol {
     var showProgress: () -> Void { get set }
     var hideProgress: () -> Void { get set }
     func handleApiCalls()
+    func checkClinicTimings(currentDate: Date) -> String
 }
 
 struct TableDataCellConstants {
@@ -26,6 +27,8 @@ class HomeViewModel: HomeViewModelProtocol {
     var configInfo: ConfigScreenModel? = nil
     var petInfo: [PetsInformationScreenModel]? = nil
     var apiFetcher: APIFetcherProtocol?
+    
+    var officeHours: String?
     
     var completionForAPIFailureMessage: (_ message: String) -> Void = { _ in }
     var completionToReloadTableView: (_ tableViewData: [[String: Any]]) -> Void = { _ in }
@@ -91,10 +94,11 @@ class HomeViewModel: HomeViewModelProtocol {
         
         let settings = response.settings
         var configInfo = ConfigScreenModel()
-        configInfo = ConfigScreenModel(isChatHidden: !(settings.isChatEnabled ?? true),
-                                       isCallingHidden: !(settings.isCallEnabled ?? true),
+        configInfo = ConfigScreenModel(isChatEnabled: settings.isChatEnabled,
+                                       isCallEnabled: settings.isCallEnabled,
                                        officeHours: settings.workHours ?? StringConstants.defaultWorkHours)
         self.configInfo = configInfo
+        self.officeHours = self.configInfo?.officeHours
     }
     
     
@@ -112,5 +116,14 @@ class HomeViewModel: HomeViewModelProtocol {
         }
         self.petInfo = petsInfo
     }
+    
+    
+    func checkClinicTimings(currentDate: Date) -> String {
+        
+        guard let officeHour = self.officeHours else { return StringConstants.issueInContactingClinic }
+        let officeHours = OfficeHourHelper()
+        return officeHours.determineOfficeHours(officeHours: officeHour,
+                                         currentDate: currentDate)
+    }
+    
 }
-

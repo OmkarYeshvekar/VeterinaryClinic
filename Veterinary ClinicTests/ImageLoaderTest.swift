@@ -9,52 +9,71 @@ import XCTest
 @testable import Veterinary_Clinic
 
 class ImageLoaderTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
     
     func test_imageFromUrl_success() {
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: configuration)
+
+        if let imageData = UIImage(named: "Ferret")?.pngData() {
+            MockURLProtocol.stubResponseData = imageData
+            MockURLProtocol.responseStatusCode = 200
+        }
+        
         let expectation = self.expectation(description: "downlaod image from url")
-        ImageLoader.sharedInstance.imageForUrl(urlString: "https://upload.wikimedia.org/wikipedia/commons/3/30/RabbitMilwaukee.jpg",
+        
+        let imageLoader = ImageLoader.sharedInstance
+        imageLoader.urlSession = urlSession
+        
+        imageLoader.imageForUrl(urlString: "https://upload.wikimedia.org/wikipedia/commons/3/32/Ferret_2008.png",
                                                completionHandler: { (image, url) in
             XCTAssertNotNil(image)
             expectation.fulfill()
         })
-        self.wait(for: [expectation], timeout: 10)
+        self.wait(for: [expectation], timeout: 5)
     }
     
     func test_imageFromUrl_failure_emptyUrl() {
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: configuration)
+
+        MockURLProtocol.responseStatusCode = 404
+                
+        let imageLoader = ImageLoader.sharedInstance
+        imageLoader.urlSession = urlSession
+        
         let expectation = self.expectation(description: "downlaod image from empty url")
-        ImageLoader.sharedInstance.imageForUrl(urlString: "",
+        imageLoader.imageForUrl(urlString: "",
                                                completionHandler: { (image, url) in
             XCTAssertNil(image)
             expectation.fulfill()
         })
-        self.wait(for: [expectation], timeout: 10)
+        self.wait(for: [expectation], timeout: 5)
     }
     
     func test_imageFromUrl_cacheImage() {
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: configuration)
+
+        if let imageData = UIImage(named: "Ferret")?.pngData() {
+            MockURLProtocol.stubResponseData = imageData
+            MockURLProtocol.responseStatusCode = 200
+        }
+                
+        let imageLoader = ImageLoader.sharedInstance
+        imageLoader.urlSession = urlSession
+        
         let expectation = self.expectation(description: "getting image which is already cached")
-        ImageLoader.sharedInstance.imageForUrl(urlString: "https://upload.wikimedia.org/wikipedia/commons/3/30/RabbitMilwaukee.jpg",
+        imageLoader.imageForUrl(urlString: "https://upload.wikimedia.org/wikipedia/commons/3/32/Ferret_2008.png",
                                                completionHandler: { (image, url) in
             XCTAssertNotNil(image)
             expectation.fulfill()
         })
-        self.wait(for: [expectation], timeout: 10)
-    }
-    
-    func test_imageFromUrl_failure_incorrectUrl() {
-        let expectation = self.expectation(description: "download image from an incorrect URL")
-        ImageLoader.sharedInstance.imageForUrl(urlString: "https://upload.wikimedia",
-                                               completionHandler: { (image, url) in
-            XCTAssertNil(image)
-            expectation.fulfill()
-        })
-        self.wait(for: [expectation], timeout: 10)
+        self.wait(for: [expectation], timeout: 5)
     }
 }

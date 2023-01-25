@@ -10,6 +10,7 @@ import UIKit
 class ImageLoader {
 
     var cache = NSCache<AnyObject, AnyObject>()
+    var urlSession: URLSession = .shared
 
     class var sharedInstance: ImageLoader {
         struct Static {
@@ -28,7 +29,7 @@ class ImageLoader {
         }
 
         if let url = URL(string: urlString) {
-            let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            let downloadTask = urlSession.dataTask(with: url) { (data, response, error) in
                 if error == nil {
                     if let imageData = data {
                         let image = UIImage(data: imageData)

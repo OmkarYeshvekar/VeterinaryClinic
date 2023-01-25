@@ -9,8 +9,8 @@ import Foundation
 
 
 struct ConfigScreenModel {
-    var isChatHidden: Bool?
-    var isCallingHidden: Bool?
+    var isChatEnabled: Bool?
+    var isCallEnabled: Bool?
     var officeHours: String?
 }
 

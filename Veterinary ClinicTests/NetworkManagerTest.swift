@@ -28,7 +28,6 @@ class NetworkManagerTest: XCTestCase {
         
         guard let pathString = Bundle(for: type(of: self)).path(forResource: "MockConfigSettingsResponseModel",
                                                                 ofType: "json") else { fatalError("Mock response file not found") }
-        
 
         if let data = try? Data(contentsOf: URL(fileURLWithPath: pathString)) {
             MockURLProtocol.stubResponseData = data

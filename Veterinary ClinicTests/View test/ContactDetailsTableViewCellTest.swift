@@ -55,31 +55,35 @@ class ContactDetailsTableViewCellTest: XCTestCase {
         let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
         cell.awakeFromNib()
         
-        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatHidden: true, isCallingHidden: true))
+        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatEnabled: true, isCallingEnabled: true))
+        XCTAssertTrue(cell.contactMethodButton.isHidden)
+        XCTAssertFalse(cell.innerView.isHidden)
+
+        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatEnabled: false, isCallingEnabled: false))
         XCTAssertTrue(cell.contactMethodButton.isHidden)
         XCTAssertTrue(cell.innerView.isHidden)
 
-        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatHidden: false, isCallingHidden: false))
-        XCTAssertTrue(cell.contactMethodButton.isHidden)
-
-        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatHidden: false, isCallingHidden: true))
+        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatEnabled: false, isCallingEnabled: true))
+        XCTAssertTrue(cell.innerView.isHidden)
+        XCTAssertEqual(cell.contactMethodButton.titleLabel?.text, StringConstants.callString)
+        
+        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatEnabled: true, isCallingEnabled: false))
         XCTAssertTrue(cell.innerView.isHidden)
         XCTAssertEqual(cell.contactMethodButton.titleLabel?.text, StringConstants.chatString)
-        
-        cell.setArrangeContactButtons(data: setConfigScreenModel(isChatHidden: true, isCallingHidden: false))
-        XCTAssertTrue(cell.innerView.isHidden)
-        XCTAssertEqual(cell.contactMethodButton.titleLabel?.text, StringConstants.callString)        
     }
     
     
     func test_contactMethodButton_checkForWeekEnd_OFH() throws {
+        var contactMethodButtonClicked = false
         let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
         cell.awakeFromNib()
 
         let contactMethodButton = try XCTUnwrap(cell.contactMethodButton, "This button is not connected to IBOutlet")
         
-        cell.contactMethodButtonClicked = { message in
-            XCTAssertEqual(message, StringConstants.workHourEndMessage)
+        let expectation = self.expectation(description: "call contactMethodButtonClicked")
+        cell.contactMethodButtonClicked = {
+            contactMethodButtonClicked = true
+            expectation.fulfill()
         }
         
         if let action = contactMethodButton.actions(forTarget: cell, forControlEvent: .touchUpInside) {
@@ -87,59 +91,63 @@ class ContactDetailsTableViewCellTest: XCTestCase {
             XCTAssertEqual(action.first, "contactMethodButtonClicked:", "There is no any such action attached with name contactMethodButtonClicked:")
         }
         
-        cell.currentDate = getCurrentDate(date: "2023-01-22T10:44:00+0000")
-         
         cell.contactMethodButtonClicked(contactMethodButton)
+        self.wait(for: [expectation], timeout: 10)
+        XCTAssertTrue(contactMethodButtonClicked)
     }
-    
+
     func test_chatButton_contactWithInOfficeHours() throws {
+        var chatButtonClicked = false
         let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
         cell.awakeFromNib()
 
         let chatButton = try XCTUnwrap(cell.chatButton, "This button is not connected to IBOutlet")
         
-        cell.chatButtonClicked = { message in
-            XCTAssertEqual(message, StringConstants.thankYouMessage)
+        let expectation = self.expectation(description: "call chatButtonClicked")
+        cell.chatButtonClicked = {
+            chatButtonClicked = true
+            expectation.fulfill()
         }
         
         if let action = chatButton.actions(forTarget: cell, forControlEvent: .touchUpInside) {
             XCTAssertEqual(action.count, 1)
             XCTAssertEqual(action.first, "chatButtonClicked:", "There is no any such action attached with name chatButtonClicked:")
         }
-        
-        cell.currentDate = getCurrentDate(date: "2023-01-23T10:44:00+0000")
-         
+
         cell.chatButtonClicked(chatButton)
+        self.wait(for: [expectation], timeout: 10)
+        XCTAssertTrue(chatButtonClicked)
     }
-    
-    
+
     
     func test_callButton_contactOFH() throws {
+        var callButtonClicked = false
         let cell = tableView?.dequeueReusableCell(withIdentifier: "ContactDetailsTableViewCell") as! ContactDetailsTableViewCell
         cell.awakeFromNib()
 
         let callButton = try XCTUnwrap(cell.callButton, "This button is not connected to IBOutlet")
         
-        cell.callButtonClicked = { message in
-            XCTAssertEqual(message, StringConstants.workHourEndMessage)
+        let expectation = self.expectation(description: "call chatButtonClicked")
+        cell.callButtonClicked = {
+            callButtonClicked = true
+            expectation.fulfill()
         }
         
         if let action = callButton.actions(forTarget: cell, forControlEvent: .touchUpInside) {
             XCTAssertEqual(action.count, 1)
             XCTAssertEqual(action.first, "callButtonClicked:", "There is no any such action attached with name callButtonClicked:")
         }
-        
-        cell.currentDate = getCurrentDate(date: "2023-01-23T19:44:00+0000")
          
         cell.callButtonClicked(callButton)
+        self.wait(for: [expectation], timeout: 10)
+        XCTAssertTrue(callButtonClicked)
     }
     
     
-    
-    private func setConfigScreenModel(isChatHidden: Bool, isCallingHidden: Bool) -> ConfigScreenModel {
+    private func setConfigScreenModel(isChatEnabled: Bool, isCallingEnabled: Bool) -> ConfigScreenModel {
         
-        let config = ConfigScreenModel(isChatHidden: isChatHidden,
-                                       isCallingHidden: isCallingHidden,
+        let config = ConfigScreenModel(isChatEnabled: isChatEnabled,
+                                       isCallEnabled: isCallingEnabled,
                                        officeHours: StringConstants.defaultWorkHours)
         return config
     }

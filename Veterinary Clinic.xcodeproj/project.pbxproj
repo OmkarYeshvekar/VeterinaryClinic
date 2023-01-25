@@ -49,6 +49,8 @@
 		9DC36E22297AEF6D0083C3F3 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */; };
 		9DC36E25297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */; };
 		9DC7A1B8297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */; };
+		9DD991A1298042730091E0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD991A0298042730091E0F9 /* Assets.xcassets */; };
+		9DD991A3298138CF0091E0F9 /* OfficeHoursHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD991A2298138CF0091E0F9 /* OfficeHoursHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewCellTest.swift; sourceTree = "<group>"; };
 		9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCellTest.swift; sourceTree = "<group>"; };
+		9DD991A0298042730091E0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DD991A2298138CF0091E0F9 /* OfficeHoursHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeHoursHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +291,7 @@
 				9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */,
 				9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */,
 				9DAB437329787EE300947759 /* ImageLoaderTest.swift */,
+				9DD991A0298042730091E0F9 /* Assets.xcassets */,
 			);
 			path = "Veterinary ClinicTests";
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				9DAB43512975823400947759 /* ImageLoader.swift */,
 				9DAB435C2976D4D500947759 /* Date+Extension.swift */,
 				9DC36E1F297AD2040083C3F3 /* StringConstants.swift */,
+				9DD991A2298138CF0091E0F9 /* OfficeHoursHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				9DAB4368297823D300947759 /* MockConfigSettingsResponseModel.json in Resources */,
 				9DAB436A2978240B00947759 /* MockPetsInformationResponseModel.json in Resources */,
 				9DA3F34929794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json in Resources */,
+				9DD991A1298042730091E0F9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +519,7 @@
 				9DA3F34E29797195001461E5 /* NetworkManager.swift in Sources */,
 				9DAB434F297525F200947759 /* PetsInformationViewModel.swift in Sources */,
 				9DAB43442972B62600947759 /* ContactDetailsTableViewCell.swift in Sources */,
+				9DD991A3298138CF0091E0F9 /* OfficeHoursHelper.swift in Sources */,
 				9DAB434A2973EFC900947759 /* PetInfoTableViewCell.swift in Sources */,
 				9DAB43552975A8DD00947759 /* ConfigSettingsResponseModel.swift in Sources */,
 				9DAB430D2972B04F00947759 /* SceneDelegate.swift in Sources */,
