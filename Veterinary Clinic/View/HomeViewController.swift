@@ -13,7 +13,8 @@ class HomeViewController: UIViewController {
         
     lazy var viewModel: HomeViewModelProtocol = {
         let apiFetcher = APIFetcher(networkManager: NetworkManager())
-        let viewModel = HomeViewModel(apiFetcher: apiFetcher)
+        let officeHourHelper = OfficeHourHelper()
+        let viewModel = HomeViewModel(apiFetcher: apiFetcher, officeHourHelper: officeHourHelper)
         return viewModel
     }()
     

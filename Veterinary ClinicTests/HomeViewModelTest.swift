@@ -12,11 +12,14 @@ class HomeViewModelTest: XCTestCase {
     
     var homeViewModel: HomeViewModel?
     var mockApiFetcher: MockAPIFetcher?
+    var mockOfficeHourHelper: MockOfficeHourHelper?
     var mockHomeViewController: MockHomeViewController?
     
     override func setUp() {
         mockApiFetcher = MockAPIFetcher()
-        homeViewModel = HomeViewModel(apiFetcher: mockApiFetcher)
+        mockOfficeHourHelper = MockOfficeHourHelper()
+        homeViewModel = HomeViewModel(apiFetcher: mockApiFetcher,
+                                      officeHourHelper: mockOfficeHourHelper)
         mockHomeViewController = MockHomeViewController()
         
         homeViewModel?.completionToReloadTableView = { tableData in
@@ -48,12 +51,9 @@ class HomeViewModelTest: XCTestCase {
         let model = homeViewModel?.tableViewData[0]
         
         if let data = model?[TableDataCellConstants.configScreenModel] as? ConfigScreenModel {
-            
-            guard let isCallEnabled = data.isCallEnabled,
-                  let isChatEnabled = data.isChatEnabled else { return }
-            
-            XCTAssertTrue(isCallEnabled)
-            XCTAssertTrue(isChatEnabled)
+
+            XCTAssertTrue(data.isCallEnabled)
+            XCTAssertTrue(data.isChatEnabled)
             XCTAssertEqual(data.officeHours, "M-F 9:00 - 18:00")
         }
         
@@ -74,7 +74,8 @@ class HomeViewModelTest: XCTestCase {
     func test_handleApiCalls_ConfigSettings_Failure() {
 
         let mockAPIFetcher = MockAPIFetcher(executionCases: .failure)
-        let homeViewModel = HomeViewModel(apiFetcher: mockAPIFetcher)
+//        let mockOfficeHourhelper = MockOfficeHourHelper()
+        let homeViewModel = HomeViewModel(apiFetcher: mockAPIFetcher, officeHourHelper: mockOfficeHourHelper)
 
         homeViewModel.completionForAPIFailureMessage = { message in
             self.mockHomeViewController?.showAPIFailureErrorMessage(message: message)
@@ -92,7 +93,7 @@ class HomeViewModelTest: XCTestCase {
     func test_handleApiCalls_PetsInformation_Failure() {
 
         let mockAPIFetcher = MockAPIFetcher(executionCases: .failure)
-        let homeViewModel = HomeViewModel(apiFetcher: mockAPIFetcher)
+        let homeViewModel = HomeViewModel(apiFetcher: mockAPIFetcher, officeHourHelper: mockOfficeHourHelper)
 
         homeViewModel.completionForAPIFailureMessage = { message in
             self.mockHomeViewController?.showAPIFailureErrorMessage(message: message)
@@ -106,33 +107,9 @@ class HomeViewModelTest: XCTestCase {
         XCTAssertTrue(mockHomeViewController?.showAPIFailureErrorMessageCalled ?? false)
     }
     
-    func test_OFH() throws {
-        let currentDate = getCurrentDate(date: "2023-01-25T13:14:00+0000")
-        homeViewModel?.officeHours = "M-F 9:00 - 17:00"
-        let message = homeViewModel?.checkClinicTimings(currentDate: currentDate)
-        XCTAssertEqual(message, StringConstants.workHourEndMessage)
-    }
-    
-    func test_contactWithInOfficeHours() throws {
-        let currentDate = getCurrentDate(date: "2023-01-25T10:44:00+0000")
+    func test_checkClinicTimings() {
         homeViewModel?.officeHours = "M-F 9:00 - 18:00"
-        let message = homeViewModel?.checkClinicTimings(currentDate: currentDate)
-        XCTAssertEqual(message, StringConstants.thankYouMessage)
-    }
-    
-    func test_checkWeekEnd_OFH() throws {
-        let currentDate = getCurrentDate(date: "2023-01-28T19:44:00+0000")
-        homeViewModel?.officeHours = "M-F 9:00 - 18:00"
-        let message = homeViewModel?.checkClinicTimings(currentDate: currentDate)
-        XCTAssertEqual(message, StringConstants.workHourEndMessage)
-    }
-    
-    private func getCurrentDate(date: String) -> Date {
-        let isoDate = date
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let date = dateFormatter.date(from:isoDate)!
-        return date
+        _ = homeViewModel?.checkClinicTimings(currentDate: Date())
+        XCTAssertTrue(mockOfficeHourHelper?.determineOfficeHoursCalled ?? false)
     }
 }

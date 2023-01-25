@@ -52,20 +52,17 @@ class ContactDetailsTableViewCell: UITableViewCell {
     
     func setArrangeContactButtons(data: ConfigScreenModel) {
         
-        let chatEnabled = data.isChatEnabled ?? false
-        let callEnabled = data.isCallEnabled ?? false
-        
-        if chatEnabled && callEnabled {
+        if data.isChatEnabled && data.isCallEnabled {
             self.contactMethodButton.isHidden = true
             
-        } else if !chatEnabled && !callEnabled {
+        } else if !data.isChatEnabled && !data.isCallEnabled {
             self.contactMethodButton.isHidden = true
             self.innerView.isHidden = true
             
         } else {
             self.innerView.isHidden = true
-            let contactWay = chatEnabled ? StringConstants.chatString : StringConstants.callString
-            let contactButtonColor: UIColor = chatEnabled ? .systemBlue : .systemGreen
+            let contactWay = data.isChatEnabled ? StringConstants.chatString : StringConstants.callString
+            let contactButtonColor: UIColor = data.isChatEnabled ? .systemBlue : .systemGreen
             self.contactMethodButton.setTitle(contactWay, for: .normal)
             self.contactMethodButton.backgroundColor = contactButtonColor
         }

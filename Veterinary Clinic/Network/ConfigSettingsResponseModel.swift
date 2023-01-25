@@ -12,7 +12,7 @@ struct ConfigSettingsResponseModel: Codable {
 }
 
 struct Settings: Codable {
-    let isChatEnabled: Bool?
-    let isCallEnabled: Bool?
-    let workHours: String?
+    let isChatEnabled: Bool
+    let isCallEnabled: Bool
+    let workHours: String
 }

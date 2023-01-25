@@ -27,6 +27,7 @@ class HomeViewModel: HomeViewModelProtocol {
     var configInfo: ConfigScreenModel? = nil
     var petInfo: [PetsInformationScreenModel]? = nil
     var apiFetcher: APIFetcherProtocol?
+    var officeHourHelper: OfficeHourHelperProtocol?
     
     var officeHours: String?
     
@@ -35,8 +36,9 @@ class HomeViewModel: HomeViewModelProtocol {
     var showProgress: () -> Void = {}
     var hideProgress: () -> Void = {}
     
-    init(apiFetcher: APIFetcherProtocol?) {
+    init(apiFetcher: APIFetcherProtocol?, officeHourHelper: OfficeHourHelperProtocol?) {
         self.apiFetcher = apiFetcher
+        self.officeHourHelper = officeHourHelper
     }
     
     func handleApiCalls() {
@@ -93,10 +95,9 @@ class HomeViewModel: HomeViewModelProtocol {
     private func mapConfigScreenModel(response: ConfigSettingsResponseModel) {
         
         let settings = response.settings
-        var configInfo = ConfigScreenModel()
-        configInfo = ConfigScreenModel(isChatEnabled: settings.isChatEnabled,
-                                       isCallEnabled: settings.isCallEnabled,
-                                       officeHours: settings.workHours ?? StringConstants.defaultWorkHours)
+        let configInfo = ConfigScreenModel(isChatEnabled: settings.isChatEnabled,
+                                           isCallEnabled: settings.isCallEnabled,
+                                           officeHours: settings.workHours)
         self.configInfo = configInfo
         self.officeHours = self.configInfo?.officeHours
     }
@@ -121,9 +122,9 @@ class HomeViewModel: HomeViewModelProtocol {
     func checkClinicTimings(currentDate: Date) -> String {
         
         guard let officeHour = self.officeHours else { return StringConstants.issueInContactingClinic }
-        let officeHours = OfficeHourHelper()
-        return officeHours.determineOfficeHours(officeHours: officeHour,
-                                         currentDate: currentDate)
+        let message = self.officeHourHelper?.determineOfficeHours(officeHours: officeHour,
+                                                                  currentDate: currentDate) ?? StringConstants.issueInContactingClinic
+        return message
     }
     
 }

@@ -41,7 +41,7 @@ private enum Days: String {
     }
 }
 
-struct OfficeHourHelper: OfficeHourHelperProtocol {
+class OfficeHourHelper: OfficeHourHelperProtocol {
     
     func determineOfficeHours(officeHours: String, currentDate: Date) -> String {
         

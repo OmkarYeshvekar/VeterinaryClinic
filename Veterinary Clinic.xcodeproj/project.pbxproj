@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D699B65298173E9008E7FD0 /* OfficeHourHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D699B64298173E9008E7FD0 /* OfficeHourHelperTest.swift */; };
+		9D699B672981743B008E7FD0 /* MockOfficeHourHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D699B662981743B008E7FD0 /* MockOfficeHourHelper.swift */; };
+		9D699B6A29817AB3008E7FD0 /* Ferret.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D699B6929817AB3008E7FD0 /* Ferret.png */; };
+		9D699B6B29817B8E008E7FD0 /* Ferret.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D699B6929817AB3008E7FD0 /* Ferret.png */; };
 		9DA3F34529792D38001461E5 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3F34429792D38001461E5 /* MockURLProtocol.swift */; };
 		9DA3F34929794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3F34829794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json */; };
 		9DA3F34B297955B7001461E5 /* MockPetsInformationResponseModel_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA3F34A297955B7001461E5 /* MockPetsInformationResponseModel_failure.json */; };
@@ -49,7 +53,6 @@
 		9DC36E22297AEF6D0083C3F3 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */; };
 		9DC36E25297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */; };
 		9DC7A1B8297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */; };
-		9DD991A1298042730091E0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD991A0298042730091E0F9 /* Assets.xcassets */; };
 		9DD991A3298138CF0091E0F9 /* OfficeHoursHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD991A2298138CF0091E0F9 /* OfficeHoursHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D699B64298173E9008E7FD0 /* OfficeHourHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeHourHelperTest.swift; sourceTree = "<group>"; };
+		9D699B662981743B008E7FD0 /* MockOfficeHourHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOfficeHourHelper.swift; sourceTree = "<group>"; };
+		9D699B6929817AB3008E7FD0 /* Ferret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ferret.png; sourceTree = "<group>"; };
 		9DA3F34429792D38001461E5 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		9DA3F34829794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockConfigSettingsResponseModel_failure.json; sourceTree = "<group>"; };
 		9DA3F34A297955B7001461E5 /* MockPetsInformationResponseModel_failure.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPetsInformationResponseModel_failure.json; sourceTree = "<group>"; };
@@ -117,7 +123,6 @@
 		9DC36E21297AEF6D0083C3F3 /* HomeViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTest.swift; sourceTree = "<group>"; };
 		9DC36E24297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsTableViewCellTest.swift; sourceTree = "<group>"; };
 		9DC7A1B7297BC0AD002AC9D1 /* PetInfoTableViewCellTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCellTest.swift; sourceTree = "<group>"; };
-		9DD991A0298042730091E0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD991A2298138CF0091E0F9 /* OfficeHoursHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeHoursHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,11 +231,13 @@
 		9DA3F34329792CE3001461E5 /* Mock files */ = {
 			isa = PBXGroup;
 			children = (
+				9D699B6929817AB3008E7FD0 /* Ferret.png */,
 				9DAB43602978061A00947759 /* MockAPIFetcher.swift */,
 				9DAB436D2978768D00947759 /* MockPetsInformationViewController.swift */,
 				9DAB436229780AB800947759 /* MockHomeViewController.swift */,
 				9DA3F34429792D38001461E5 /* MockURLProtocol.swift */,
 				9DA3F34F29799308001461E5 /* MockNetworkManager.swift */,
+				9D699B662981743B008E7FD0 /* MockOfficeHourHelper.swift */,
 			);
 			path = "Mock files";
 			sourceTree = "<group>";
@@ -291,7 +298,7 @@
 				9DAB436F2978771800947759 /* PetsInformationViewModelTest.swift */,
 				9DAB4371297879DB00947759 /* Date+ExtensionTest.swift */,
 				9DAB437329787EE300947759 /* ImageLoaderTest.swift */,
-				9DD991A0298042730091E0F9 /* Assets.xcassets */,
+				9D699B64298173E9008E7FD0 /* OfficeHourHelperTest.swift */,
 			);
 			path = "Veterinary ClinicTests";
 			sourceTree = "<group>";
@@ -473,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DAB43172972B05100947759 /* LaunchScreen.storyboard in Resources */,
+				9D699B6B29817B8E008E7FD0 /* Ferret.png in Resources */,
 				9DAB43452972B62600947759 /* ContactDetailsTableViewCell.xib in Resources */,
 				9DAB43142972B05100947759 /* Assets.xcassets in Resources */,
 				9DAB434B2973EFC900947759 /* PetInfoTableViewCell.xib in Resources */,
@@ -484,11 +492,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D699B6A29817AB3008E7FD0 /* Ferret.png in Resources */,
 				9DA3F34B297955B7001461E5 /* MockPetsInformationResponseModel_failure.json in Resources */,
 				9DAB4368297823D300947759 /* MockConfigSettingsResponseModel.json in Resources */,
 				9DAB436A2978240B00947759 /* MockPetsInformationResponseModel.json in Resources */,
 				9DA3F34929794DC1001461E5 /* MockConfigSettingsResponseModel_failure.json in Resources */,
-				9DD991A1298042730091E0F9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +548,8 @@
 				9DAB4365297817C900947759 /* APIFetchertest.swift in Sources */,
 				9DC36E22297AEF6D0083C3F3 /* HomeViewControllerTest.swift in Sources */,
 				9DC36E25297AF4CE0083C3F3 /* ContactDetailsTableViewCellTest.swift in Sources */,
+				9D699B672981743B008E7FD0 /* MockOfficeHourHelper.swift in Sources */,
+				9D699B65298173E9008E7FD0 /* OfficeHourHelperTest.swift in Sources */,
 				9DAB435F2978055600947759 /* HomeViewModelTest.swift in Sources */,
 				9DA3F34529792D38001461E5 /* MockURLProtocol.swift in Sources */,
 				9DAB43612978061A00947759 /* MockAPIFetcher.swift in Sources */,

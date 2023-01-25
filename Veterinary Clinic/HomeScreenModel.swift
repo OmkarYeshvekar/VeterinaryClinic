@@ -9,9 +9,9 @@ import Foundation
 
 
 struct ConfigScreenModel {
-    var isChatEnabled: Bool?
-    var isCallEnabled: Bool?
-    var officeHours: String?
+    var isChatEnabled: Bool
+    var isCallEnabled: Bool
+    var officeHours: String
 }
 
 struct PetsInformationScreenModel {
